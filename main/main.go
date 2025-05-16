@@ -10,7 +10,7 @@ const (
 	ftpAdress   = "192.168.202.51:33344"
 	ftpUser     = "ftpchiftec"
 	ftpPassword = "BsZwPgCBmE9asvX"
-	wcpPath     = "C:\\Program Files (x86)\\WinSCP\\WinSCP.exe"
+	wcpPath     = "C:\\Program Files (x86)\\WinSCP\\WinSCP.com"
 )
 
 func main() {
@@ -31,7 +31,7 @@ func copyFiles(remoteDir, localDir, fileName string) {
 
 	fmt.Printf("Копирование %s из %s в %s...\n", localDir, remoteDir, fileName)
 
-	ftpURL := fmt.Sprintf("ftp://%s:%s@%s/%s", ftpUser, ftpPassword, ftpAdress, remoteDir)
+	ftpURL := fmt.Sprintf("ftp://%s:%s@%s/ -passive=0", ftpUser, ftpPassword, ftpAdress)
 	cmd := exec.Command(wcpPath, ftpURL)
 
 }
