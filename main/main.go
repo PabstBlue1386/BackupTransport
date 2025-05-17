@@ -25,6 +25,14 @@ func main() {
 	remoteUtPath := "\\UT-day\\"
 	remoteRcPath := "\\RC-day\\"
 
+	command := ftm.Sprintf("
+		open ftp://%s:%s@%s/ -passive=0
+		 
+	
+	
+	
+	")
+
 }
 
 func copyFiles(remoteDir, localDir, fileName string) {
